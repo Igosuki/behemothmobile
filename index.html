@@ -18,33 +18,62 @@
     under the License.
 -->
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
-		<meta charset="utf-8">
-		
-        <link rel="stylesheet" href="styles/kendo.mobile.all.min.css" type="text/css" />	
-        
-        <script type="text/javascript" charset="utf-8" src="cordova-2.3.0.js"></script>
-        <script src="js/jquery.min.js"></script>
-    	<script src="js/kendo.mobile.min.js"></script>
-        
-    </head>
-    <body>
-        <div data-role="view" data-layout="app" data-title="search" id="info">
-        	<div id="search">Vue Search</div>
-        </div>
-        <div data-role="layout" data-id="app">
-	        <header data-role="header">
-	        	<div data-role="navbar">Behemoth records</div>
-	        </header>
-        </div> 
-            
-        
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-        	var application = new kendo.mobile.Application($(document).body, { transition: "slide" });
-        </script>
-    </body>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+<meta charset="utf-8">
+
+<link rel="stylesheet" href="styles/kendo.mobile.all.min.css"
+	type="text/css" />
+<link href="styles/kendo.common.css" rel="stylesheet" />
+<link href="styles/kendo.default.css" rel="stylesheet" />
+<link href="styles/kendo.mobile.all.css" rel="stylesheet" />
+<link rel="stylesheet" href="master.css" type="text/css" />
+
+<script type="text/javascript" charset="utf-8" src="cordova-2.3.0.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/kendo.mobile.min.js"></script>
+
+</head>
+<body>
+	<div data-role="layout" data-id="app">
+		<header data-role="header">
+			<div data-role="navbar">Behemoth records</div>
+		</header>
+	</div>
+	<div data-role="view" data-title="login" id="login">
+
+		<ul data-role="listview" data-type="group" data-style="inset">
+			<li class="title">Behemoth records</li>
+		</ul>
+
+		<div data-role="listview" data-type="group" data-style="inset">
+			<p>
+				<input type="text" value="Mail" class="global" />
+			</p>
+			<p>
+				<input type="text" value="Ville" class="global" />
+			</p>
+			<p>
+				<i></i><a class="button, login-button" data-click="logClick" data-role="button" data-icon="featured"
+					href="#button-home" style="background-color: green">Valider</a>
+			</p>
+		</div>
+
+	</div>
+
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript">
+		var application = new kendo.mobile.Application($(document).body, {
+			transition : "slide"
+		});
+	</script>
+	<script>
+		function logClick(e) {
+			console.log(this.element.prop("id") + " was clicked!");
+		}
+	</script>
+</body>
 </html>

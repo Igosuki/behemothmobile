@@ -18,7 +18,6 @@
  under the License.
  -->
 <html>
-<<<<<<< HEAD
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="format-detection" content="telephone=no" />
@@ -32,6 +31,7 @@
 <link href="styles/kendo.default.css" rel="stylesheet" />
 <link href="styles/kendo.mobile.all.css" rel="stylesheet" />
 <link rel="stylesheet" href="master.css" type="text/css" />
+<link rel="stylesheet" href="css/index.css" type="text/css" />
 
 <script type="text/javascript" charset="utf-8" src="cordova-2.3.0.js"></script>
 <script src="js/jquery.min.js"></script>
@@ -39,10 +39,23 @@
 
 </head>
 <body>
-	<div data-role="layout" data-id="app">
-		<header data-role="header">
-			<div data-role="navbar">Behemoth records</div>
-		</header>
+	<div data-role="view" data-layout="app" data-title="search" id="info">
+
+		<form action="javascript:SearchPage();">
+			<input id="input_search_word" type="search"
+				style="width: 94%; height: 45px; margin: 8px 3% 8px 3%; padding-left: 10px; padding-right: 10px;"
+				placeholder="Artiste ou chanson" autocapitalize="off"
+				autocorrect="off" />
+		</form>
+
+
+		<ul id="searchInput" data-role="listview" data-style="inset">
+			<li><a>Behemoth</a></li>
+			<li><a>Behemoth</a></li>
+			<li><a>Behemoth</a></li>
+			<li><a>Behemoth</a></li>
+		</ul>
+
 	</div>
 	<div data-role="view" data-title="login" id="login">
 
@@ -58,12 +71,20 @@
 				<input type="text" value="Ville" class="global" />
 			</p>
 			<p>
-				<i></i><a class="button, login-button" data-click="logClick" data-role="button" data-icon="featured"
-					href="#button-home" style="background-color: green">Valider</a>
+				<i></i><a class="button, login-button" data-click="logClick"
+					data-role="button" data-icon="featured" href="#button-home"
+					style="background-color: green">Valider</a>
 			</p>
 		</div>
 
 	</div>
+
+	<div data-role="layout" data-id="app">
+		<header data-role="header">
+			<div data-role="navbar">Behemoth records</div>
+		</header>
+	</div>
+
 
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript">
@@ -77,49 +98,4 @@
 		}
 	</script>
 </body>
-=======
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
-		<meta charset="utf-8">
-            
-            <link rel="stylesheet" href="styles/kendo.mobile.all.min.css" type="text/css" />
-            <link rel="stylesheet" href="css/index.css" type="text/css" />
-            
-            <script type="text/javascript" charset="utf-8" src="cordova-2.3.0.js"></script>
-            <script src="js/jquery.min.js"></script>
-            <script src="js/kendo.mobile.min.js"></script>
-            
-            </head>
-    <body>
-        <div data-role="view" data-layout="app" data-title="search" id="info">
-           
-            <form action="javascript:SearchPage();">
-                <input id="input_search_word" type="search" style="width:94%; height: 45px; margin: 8px 3% 8px 3%; padding-left:10px; padding-right:10px;"
-                placeholder="Artiste ou chanson" autocapitalize="off" autocorrect="off" />
-            </form>
-            
-            
-            <ul id="searchInput" data-role="listview" data-style="inset">
-                <li><a>Behemoth</a></li>
-                <li><a>Behemoth</a></li>
-                <li><a>Behemoth</a></li>
-                <li><a>Behemoth</a></li>
-            </ul>
-            
-        </div>
-        <div data-role="layout" data-id="app">
-	        <header data-role="header">
-	        	<div data-role="navbar">Behemoth records</div>
-	        </header>
-        </div>
-        
-        
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-        	var application = new kendo.mobile.Application($(document).body, { transition: "slide" });
-            </script>
-    </body>
->>>>>>> 2aa037039c19733b2c6652de9fef0a3730f29e7a
 </html>

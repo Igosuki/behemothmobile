@@ -165,3 +165,8 @@ to {
 	text-align: center;
 	width: 20%;
 }
+.userTitle {
+	border-style:none;
+	border-width:1px;
+	border-bottom-style:solid;
+}

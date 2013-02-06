@@ -19,27 +19,28 @@
 <body>
 
 	<div data-role="view" data-title="login" id="login">
+		<div style="height: 50px"></div>
 		<div class="global" align="center">
 			<img src="./img/pentagram_behemoth_250x250.png" alt="Behemoth">
 		</div>
 		<div style="height: 50px"></div>
-		<div data-role="listview" data-type="group" data-style="inset">
+		<div id="loginView" data-role="listview" data-type="group" data-style="inset">
 			<p>
-				<input type="text" value="Mail" class="global" />
+				<input type="email" class="global" placeholder="mail@mail.com"/>
 			</p>
 			<p>
-				<input type="text" value="Ville" class="global" />
+				<input type="text" class="global" placeholder="city"/>
 			</p>
 			<p>
-				<i></i><a class="button, login-button" data-click="logClick"
+				<i></i><a class="button, login-button" id="login_button" data-click="logClick"
 					data-role="button" data-icon="featured" href="#info"
 					style="background-color: green">Valider</a>
 			</p>
 		</div>
 	</div>
+	
 	<div data-role="view" data-layout="app" data-title="search" id="info"
 		data-init="mobileListViewDataBindInitFlat">
-
 		<form action="javascript:SearchPage();">
 			<input id="input_search_word" type="search"
 				style="width: 94%; height: 45px; margin: 8px 3% 8px 3%; padding-left: 10px; padding-right: 10px;"
@@ -60,7 +61,6 @@
 	<script type="text/x-kendo-template" id="searchItemTemplate">
         <a  class="details-link">${name}</a>
     </script>
-
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript">
 		var application = new kendo.mobile.Application($(document).body, {
@@ -75,6 +75,12 @@
 		}, {
 			name : "Behemoth"
 		} ];
+		var loginViewModel = kendo.observable({
+		    mailValue: "mail@mail.com",
+		    cityValue: "ville"
+		});
+		
+		kendo.bind($("#login"), loginViewModel);
 
 		function mobileListViewDataBindInitFlat() {
 			$("#result").kendoMobileListView({

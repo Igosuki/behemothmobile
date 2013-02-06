@@ -26,17 +26,30 @@
 		<div style="height: 50px"></div>
 		<div id="loginView" data-role="listview" data-type="group" data-style="inset">
 			<p>
-				<input type="email" class="global" placeholder="mail@mail.com"/>
+				<input id="email-i" type="email" class="global" placeholder="mail@mail.com"/>
 			</p>
 			<p>
-				<input type="text" class="global" placeholder="city"/>
+				<input id="city-i" type="text" class="global" placeholder="city"/>
 			</p>
 			<p>
-				<i></i><a class="button, login-button" id="login_button" data-click="logClick"
-					data-role="button" data-icon="featured" href="#info"
+				<i></i><a class="button, login-button" id="login_button" data-click="toInfoPage"
+					data-role="button" data-icon="featured"
 					style="background-color: green">Valider</a>
 			</p>
 		</div>
+		<span id="toto" data-bind="text: fullName"></span>
+		<script>
+		var viewModel = kendo.observable({
+		    firstName: "John",
+		    lastName: "Doe",
+		    fullName: function() {
+		        return this.get("firstName") + " " + this.get("lastName");
+		    }
+		});
+		
+		kendo.bind($("toto"), viewModel);
+		</script>
+		
 	</div>
 	
 	<div data-role="view" data-layout="app" data-title="search" id="info"
@@ -57,7 +70,7 @@
 			<div data-role="navbar">Behemoth records</div>
 		</header>
 	</div>
-
+	
 	<script type="text/x-kendo-template" id="searchItemTemplate">
         <a  class="details-link">${name}</a>
     </script>
@@ -88,9 +101,8 @@
 				template : $("#searchItemTemplate").html(),
 			});
 		}
-	</script>
-	<script>
-		function logClick(e) {
+		function toInfoPage(e) {
+			application.navigate('info')
 			console.log(this.element.prop("id") + " was clicked!");
 		}
 	</script>
